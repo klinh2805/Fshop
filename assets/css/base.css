@@ -1,0 +1,193 @@
+/* Bien gia */
+:root {
+    --primary--color: rgb(71, 190, 211);
+    --hover--color: rgba(71, 190, 211, 0.801);
+    --white--color: #fff;
+    --black--color: #000;
+    --text--color: #333;
+    --border--color: #dbdbdb;
+    --star-gold--color: #ffce3d;
+
+    --header-height: 119px;
+    --navbar-height: 34px;
+    --header-sort-bar-height: 46px;
+}
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    /* độ cao mặc định dòng chữ */
+    line-height: 16px;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+}
+/* responsive (tương thích với mọi kích thước thiết bị) */
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -12px;
+    margin-right: -12px;
+}
+/* Test */
+.grid__column-2 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 16.6667%;
+}
+.grid__column-2-4 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 20%;
+}
+.grid__column-10 {
+    width: 83.3333%;
+}
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes growth {
+    from {
+        transform: scale(0.7);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+/* Modal layout (Phần làm mờ layout khi click ĐK/ĐNhap) */
+.modal {
+    /* size chiếm hết màn hình */
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    /* animation: fadeIn linear 0.3s; */
+}
+.modal_overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.modal_body {
+    margin: auto;
+    position: relative;
+    animation: growth linear 0.1s;
+}
+/* Button style */
+.btn {
+    min-width: 142px;
+    height: 32px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    cursor: pointer;
+    background-color: var(--white--color);
+    line-height: 1.6rem;
+}
+.btn:hover {
+    background-color: rgba(231, 231, 231, 0.925);
+}
+.btn.btn--primary {
+    color: var(--white--color);
+    background-color: var(--primary--color);
+}
+/* .btn.btn--disabled {
+    background-color: #c3c3c3;
+    color: #949494;
+    cursor: default;
+} */
+
+/* Selection */
+.select-input {
+    position: relative;
+    min-width: 200px;
+    height: 32px;
+    padding: 0 12px;
+    border-radius: 2px;
+    background-color: var(--white--color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.select-input::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 11px;
+    right: 0px;
+    top: 24px;
+}
+.select-input_label {
+    font-size: 1.4rem;
+    color: var(--text--color);
+}
+.select-input_list {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 24px;
+    border-radius: 2px;
+    background-color: var(--white--color);
+    list-style: none;
+    padding: 16px 12px;
+    animation: fadeIn ease 0.3s;
+    display: none;
+    z-index: 1;
+}
+.select-input:hover .select-input_list {
+    display: block;
+}
+.select-input_item {
+    display: block;
+}
+.select-input_link {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--text--color);
+    display: block;
+    padding: 7px 0;
+}
+.select-input_link:hover {
+    color: var(--primary--color);
+}
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+.pagination-item {
+    margin: 0 12px;
+}
+.pagination-item--active .pagination-item_link {
+    background-color: var(--primary--color);
+    color: var(--white--color);
+}
+.pagination-item--active:hover .pagination-item_link {
+    background-color: var(--hover--color);
+}
+.pagination-item_link {
+    display: block;
+    text-decoration: none;
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: #939393;
+    min-width: 40px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 2px;
+}
